@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+	layout:decorate="~{/plantilla/plantillaUI}">
+
+<head>
+	<meta charset="UTF-8">
+	<title>Lista de Roles</title>
+	<!-- Google Font: Source Sans Pro -->
+	<link rel="stylesheet"
+		href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
+	<!-- Font Awesome -->
+	<link rel="stylesheet" th:href="@{themes_AdminLTE/plugins/fontawesome-free/css/all.min.css}">
+	<!-- Estilo del tema -->
+	<link rel="stylesheet" th:href="@{themes_AdminLTE/dist/css/adminlte.css}">
+
+	<style>
+		.table-blue thead th {
+			background-color: rgba(131, 0, 233, 0.54) !important
+		}
+
+		body {
+			background-image: url('https://elsumario.com/wp-content/uploads/2015/07/manitas.jpg');
+			background-size: cover;
+			background-repeat: no-repeat;
+			background-attachment: fixed;
+			/* Fija la imagen de fondo para que no se desplace con el contenido */
+		}
+	</style>
+</head>
+
+<body>
+	<div layout:fragment="cargarpagina">
+		<br> <br>
+		<div class="card shadow mb-4">
+			<div class="card-header py-3">
+				<h5 class="m-0 font-weight-bold text-primary">Lista de
+					Roles</h5>
+			</div>
+			<div class="card-body">
+				<div class="table-responsive">
+					<table id="listapictogramas" class="table table-bordered table-striped table-blue">
+						<thead>
+							<tr>
+								<th>Id Rol</th>
+								<th>Nombre</th>
+								<th>Descripcion</th>
+								<th>Estado</th>
+								<th>Acciones</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr th:each="rol: ${ListaR}">
+								<td th:text="${rol.idRol}"></td>
+								<td th:text="${rol.nombre}"></td>
+								<td th:text="${rol.descripcion}"></td>
+								<td> <span th:if="${rol.estado}">Activo</span>
+									<span th:unless="${rol.estado}">Inactivo</span>
+								</td>
+								<td>
+									<a th:href="@{/editarrol/}+ ${rol.idRol}" class="btn btn-outline-primary"><i
+											class="fa fa-edit"></i></a>
+									<a th:href="@{/eliminarRol/}+ ${rol.idRol}" class="btn btn-outline-danger"
+										onclick="return confirm('Esta seguro que desea eliminar el registro?')">
+										<i class="fa fa-trash"></i>
+									</a>
+								</td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+			</div>
+		</div>
+
+		<!-- /.card -->
+	</div>
+</body>
+
+</html>

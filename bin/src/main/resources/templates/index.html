@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+	layout:decorate="~{/plantilla/plantillaUI}">
+
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>FINESEC | Fundación Pro Integración Educativa y Social
+		del Ecuador</title>
+
+	<!-- Google Font: Source Sans Pro -->
+	<link rel="stylesheet"
+		href="/https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
+	<!-- Font Awesome -->
+	<link rel="stylesheet" th:href="@{themes_AdminLTE/plugins/fontawesome-free/css/all.min.css}">
+	<!-- Theme style -->
+	<link rel="stylesheet" th:href="@{themes_AdminLTE/dist/css/adminlte.css}">
+
+
+</head>
+
+<body class="content-image no-background">
+
+
+	<!-- OK -->
+	<div layout:fragment="cargarpagina">
+
+		<div>
+			<section>
+				<div class="finesec-container">
+					<h2>FINESEC</h2>
+					<p>Fundación Pro Integración Educativa y Social del Ecuador</p>
+				</div>
+			</section>
+			<!-- Mission and Vision Section -->
+
+			<section class="mission-vision-section">
+				<div class="mission-vision-container">
+					<h2>Pictogramas que hacen la diferencia </h2>
+					<p>Los pictogramas son recursos visuales que permiten a las personas comunicarse, transmitir
+						deseos, necesidades y organizar su conducta a través de un medio alternativo de
+						comunicación al lenguaje oral, se constituyen en una herramienta de la accesibilidad
+						cognitiva. La accesibilidad cognitiva es hacer el mundo más fácil de entender.
+						Es muy importante saber que hay muchos tipos de pictogramas. Cada tipo de pictograma se
+						usa para cosas distintas.
+					</p>
+				</div>
+			</section>
+
+			<!-- End Mission and Vision Section -->
+			<!-- End Mission and Vision Section -->
+		</div>
+
+		<span class="brand-link" style="display: flex; justify-content: center; align-items: center;">
+			<img th:src="@{themes_AdminLTE/dist/img/pictograma.jpg}" class="content-image" alt="pictograma">
+
+		</span>
+
+
+		<!-- /.content-wrapper -->
+		<!-- Control Sidebar -->
+		<aside class="control-sidebar control-sidebar-dark">
+			<!-- Control sidebar content goes here -->
+		</aside>
+		<!-- /.control-sidebar -->
+	</div>
+
+</body>
+
+</html>
